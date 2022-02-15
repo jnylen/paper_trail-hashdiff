@@ -22,7 +22,7 @@ class PaperTrailHashDiff
           value_changes
         end
     end
-    diff_changes
+    diff_changes.reject { |_k, v| v.blank? }
   end
 
   def where_object_changes(version_model_class, attributes)
